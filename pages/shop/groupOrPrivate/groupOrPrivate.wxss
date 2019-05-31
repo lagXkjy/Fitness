@@ -1,0 +1,18 @@
+.list {
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.list-context {
+  width: 470rpx;
+}
+
+.list-btn {
+  border-radius: 6rpx;
+  padding: 8rpx 16rpx;
+}
+
+.list image {
+  width: 220rpx;
+  height: 220rpx;
+}

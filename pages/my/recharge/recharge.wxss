@@ -1,0 +1,53 @@
+page {
+  background: #fff;
+}
+
+.header {
+  height: 150rpx;
+  width: 100%;
+}
+
+.header-image {
+  width: 40rpx;
+}
+
+.balance {
+  height: 40rpx;
+}
+
+.tab-item {
+  width: 50%;
+  height: 80rpx;
+}
+
+.tab-current {
+  color: #ff425b;
+  border-bottom: 1px solid #ff425b;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  line-height: normal;
+}
+
+button::after {
+  border: none;
+}
+
+.list {
+  border: 1px solid #ff425b;
+  border-radius: 10rpx;
+  width: 210rpx;
+  height: 120rpx;
+  margin-right: 34rpx;
+}
+
+.list-box .list:nth-child(3n) {
+  margin-right: 0;
+}
+
+.detail-left {
+  width: 70%;
+}

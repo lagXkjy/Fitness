@@ -1,0 +1,25 @@
+<view class='context padding-lr-30 white-bg flex align-center font-24'>
+  <image mode='widthFix' class='list-image margin-r-10' src='/images/time.png'></image>
+  <text class='margin-r-20 gray-color'>剩余节数</text>
+  <text class='theme-color'>{{MppSurplus}}</text>
+  <text class='black-color'>/{{MppNum}}</text>
+</view>
+<view class='padding-30 black-color font-30 border-b-1 border-t-1'>
+  已用节数
+</view>
+<view wx:for='{{listData}}' wx:key='{{index}}' class='white-bg flex padding-30 justify-between align-center border-b-1'>
+  <view class='flex flex-direction justify-between left-context'>
+    <view class='black-color font-30 flex-wrap flex'>
+      {{item.CorInfo.CorName}}
+    </view>
+    <view class='gray-color font-24 margin-t-10 margin-b-10'>
+      {{item.time}}
+    </view>
+    <view class='gray-color font-24'>
+      <text>{{item.CorInfo.StrName}}</text>
+      <text class='margin-l-20'>{{item.CorInfo.CoaName}}</text>
+    </view>
+
+  </view>
+  <view class='theme-color font-32 font-weight'>¥{{item.CorInfo.CorRePrice}}</view>
+</view>

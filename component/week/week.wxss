@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  height: 60rpx;
+  box-sizing: border-box;
+}
+
+.list {
+  box-sizing: border-box;
+  width: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 22rpx;
+  color: #000;
+}
+
+.fitness {
+  width: 14.286%;
+}
+
+.now {
+  background: #ff425b;
+  color: #fff;
+}
+
+.list-now {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 22rpx;
+}

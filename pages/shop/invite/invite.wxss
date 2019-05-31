@@ -1,0 +1,16 @@
+/* pages/shop/invite/invite.wxss */
+page {
+    background: #fff;
+}
+
+.context {
+    margin-bottom: 80rpx;
+}
+
+.footer {
+    height: 80rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

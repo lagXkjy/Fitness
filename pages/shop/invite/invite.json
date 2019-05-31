@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "邀请有礼",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "swiper-banner": "/component/swiperBanner/swiperBanner"
+  }
+}

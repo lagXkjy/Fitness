@@ -1,0 +1,26 @@
+page {
+  background: #fff;
+}
+
+.win {
+  width: 240rpx;
+  height: 240rpx;
+  margin: auto;
+  margin-top: 130rpx;
+}
+
+.thanks {
+  font: 44rpx;
+  color: #5a5a5a;
+  margin-top: 56rpx;
+}
+
+.footer {
+  font-size: 34rpx;
+  margin-top: 240rpx;
+}
+
+.footer>view {
+  height: 90rpx;
+  border-radius: 6rpx;
+}

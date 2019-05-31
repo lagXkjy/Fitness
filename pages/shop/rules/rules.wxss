@@ -1,0 +1,7 @@
+/* pages/shop/rules/rules.wxss */
+.wrapper{
+    padding: 60rpx 30rpx;
+}
+.wrapper>view{
+    margin-bottom: 30rpx;
+}

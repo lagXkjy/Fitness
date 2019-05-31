@@ -1,0 +1,41 @@
+<import src='/libs/wxParse/wxParse.wxml' />
+<view class='wrapper border-box'>
+  <swiper-banner height='300' arr='{{banImgs}}' i-url='{{shopSrc}}'></swiper-banner>
+  <view class='white-bg border-box padding-30'>
+    <view class='border-box black-color font-weight font-28 margin-b-20 width-100 point'>
+      {{strInfo.StrName}}
+    </view>
+    <view class='border-box font-24 gray-color flex justify-between'>
+      <view class='width-90 point border-box'>{{strInfo.StrConAds}}</view>
+      <text bindtap='checkAddress' class='theme-color'>导航</text>
+    </view>
+  </view>
+  <view bindtap='callPhone' class='border-t-1 border-b-1 white-bg padding-30 flex justify-between'>
+    <view class='font-24 gray-color flex align-center'>
+      <image mode='widthFix' class='left-image margin-r-10' src='/images/phone.png'></image>
+      <text>{{strInfo.StrConNum}}</text>
+    </view>
+    <image mode='widthFix' class='right' src='/images/right.png'></image>
+  </view>
+  <block wx:if='{{strInfo.StrDesp}}'>
+    <view class='margin-t-20 white-bg black-color font-28 padding-30 border-box flex align-center border-t-1 border-b-1'>
+      <image mode='widthFix' class='title-image margin-r-10' src='/images/shop.png'></image>
+      <text>门店介绍</text>
+    </view>
+    <view class='white-bg font-24 gray-color padding-30 border-box'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </block>
+  <block wx:if='{{strInfo.StrAction}}'>
+    <view class='margin-t-20 white-bg black-color font-28 padding-30 border-box flex align-center border-t-1 border-b-1'>
+      <image mode='widthFix' class='title-image margin-r-10' src='/images/amazed.png'></image>
+      <text>注意事项</text>
+    </view>
+    <view class='white-bg gray-color font-24 padding-30'>
+      <text>{{strInfo.StrAction}}</text>
+    </view>
+  </block>
+  <view wx:if='{{userType!=2}}' bindtap='skipCourseList' class='btn width-100 theme-bg white-color font-30 flex justify-center align-center'>
+    立即约课
+  </view>
+</view>

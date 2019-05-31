@@ -1,0 +1,46 @@
+<!-- pages/shop/newInvite/newInvite.wxml -->
+<wxs src="../../../common/filter.wxs" module="filter"></wxs>
+<view class="wrapper">
+    <image wx:if='{{bannerAndRules.IcrHomeBanner}}' class="banner" src='{{contentSrc + bannerAndRules.IcrHomeBanner}}' mode="widthFix" />
+    <view class="border-box padding-30">
+        <view class='flex justify-between font-30'>
+            <button open-type="share" class='invite-btn'>立即邀请</button>
+            <view bindtap='canvasShowChange' class='invite-btn invite-btn1'>面对面邀请</view>
+        </view>
+        <view class="invite-middle margin-t-30">
+            <view class='middle-head flex justify-between align-center font-26 padding-l-30 padding-r-20'>
+                <text>我的邀请记录</text>
+                <text bindtap='toShop'>去约课></text>
+            </view>
+            <view class="flex border-box padding-t-30 padding-b-30">
+                <view class='invite-info flex flex-direction justify-between align-center'>
+                    <view>
+                        <text class="font-weight">{{filter.money(InviData.NoArrivalMoneySum) || 0}}</text>
+                        <text class="yuan">元</text>
+                    </view>
+                    <text bindtap='toMyInvite' data-type='0'>代金券在路上></text>
+                </view>
+                <view class='invite-info flex flex-direction justify-between align-center'>
+                    <view>
+                        <text class="font-weight">{{filter.money(InviData.ArrivalMoneySum) || 0}}</text>
+                        <text class="yuan">元</text>
+                    </view>
+                    <text bindtap='toMyInvite' data-type='1'>累计获得></text>
+                </view>
+            </view>
+        </view>
+        <block wx:if='{{bannerAndRules.IcrRule}}'>
+            <view class="detail flex justify-around align-center">
+                <view class="detail-inline"></view>
+                <view>活动细则</view>
+                <view class="detail-inline"></view>
+            </view>
+            <view class="detail-list">
+                <rich-text nodes="{{bannerAndRules.IcrRule}}"></rich-text>
+            </view>
+        </block>
+    </view>
+</view>
+<view hidden="{{!canvasIsShow}}" bindtap='canvasShowChange' class="canvas-box flex justify-center align-center {{canvasIsShow && 'canvas-show'}}">
+    <canvas canvas-id="cordcanvas" id="cordcanvas" class="canvas" />
+</view>

@@ -1,0 +1,23 @@
+<view wx:if='{{obj}}' bindtap='skipCourseDetail' class='wrapper'>
+  <view class='left'>
+    <image catchtap='checkImage' class='image' src='{{iUrl?obj.image?iUrl+obj.image:"":obj.image}}'></image>
+    <view class='content'>
+      <view class='name'>{{obj.name}}</view>
+      <view class='info'>{{obj.info?obj.info:"无"}}</view>
+      <view class='time'>
+        <text wx:if='{{obj.corTime}}' class='show-time'>{{obj.corTime}}课时</text>
+        <text wx:if='{{obj.time}}' class='show-time'>{{obj.time}}</text>
+        <text wx:if='{{obj.price}}' class='price'>¥{{obj.price}}</text>
+        <text wx:if='{{obj.oldPrice}}' class='old-price'>¥{{obj.oldPrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{isCheck}}' class='btn'>查看</view>
+  <view wx:if='{{!obj.isFull && isBuy}}' class='btn'>预约</view>
+  <view wx:if='{{isGroup}}' class='btn'>团课</view>
+  <view wx:if='{{isPrivate}}' class='btn'>私课</view>
+  <view wx:if='{{obj.isFull}}' class='btn full'>{{obj.isFull==1?"满员":"结束"}}</view>
+  <view wx:if='{{!obj.isFull && obj.isHot}}' class='tag'>
+    <view class='tag-box'>紧张</view>
+  </view>
+</view>

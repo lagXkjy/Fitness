@@ -1,0 +1,43 @@
+.wrapper {
+  padding-bottom: 100rpx;
+}
+
+.title {
+  padding-bottom: 50rpx;
+}
+
+.list {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  background: #c9c9c9;
+  line-height: 0;
+}
+
+.list-current {
+  background: #ff425b;
+}
+
+.footer {
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.submit {
+  width: 70rpx;
+}
+
+.footer-arrow {
+  width: 66rpx;
+}
+
+.footer-submit {
+  width: 40rpx;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+}

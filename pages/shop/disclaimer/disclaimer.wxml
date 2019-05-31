@@ -1,0 +1,4 @@
+<view class='black-color font-34 text-center padding-tb-30'>{{title}}</view>
+<view wx:for='{{listData}}' wx:key='{{index}}' class='margin-b-30 padding-lr-30 font-26 black-color'>
+  {{item}}
+</view>

@@ -1,0 +1,20 @@
+<!-- pages/my/cashCoupon/cashCoupon.wxml -->
+<wxs src="../../../common/filter.wxs" module='filter'/>
+<view class="border-box padding-30">
+    <view bindtap='clickSelect' data-index='{{index}}' class="list border-box" wx:for="{{list}}" wx:key="{{index}}">
+        <image mode="widthFix" src="/images/cashCoupon.png" />
+        <view class="list-content border-box flex justify-between">
+            <view class='list-left flex flex-direction justify-center {{item.RcAlreadyUsed==1?"list-used":""}}'>
+                <view class="list-title point-2 font-30">{{item.RcTitle}}</view>
+                <view class="font-26 margin-t-10 margin-b-10">{{item.RcExplain}}</view>
+                <view class="font-26">有效期至：{{filter.timeStamp(item.RcClosingDate)}}</view>
+            </view>
+            <view class='list-right flex justify-center align-center {{(currentDate > filter.getDateTime(item.RcClosingDate) || RcAlreadyUsed) && "list-used"}} {{item.RcAlreadyUsed==1?"list-used":""}}'>
+                <view>
+                    <text class="rmb">¥</text>
+                    <text>{{item.RcFaceValue}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

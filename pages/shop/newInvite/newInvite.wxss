@@ -1,0 +1,101 @@
+/* pages/shop/newInvite/newInvite.wxss */
+page{
+    background: #242424;
+}
+.wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #242424;
+}
+.banner{
+    width: 100%;
+}
+.invite-btn{
+    width: 330rpx;
+    height: 98rpx;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #fff;
+    background: #ff425b;
+}
+.invite-btn::after{
+    border-radius: 0;
+}
+.invite-btn1{
+    border: 1px solid #ff425b;
+    color: #ff425b;
+    background: inherit;
+}
+.invite-middle{
+    background: #333333;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.middle-head{
+    height: 60rpx;
+    background: #393939;
+}
+.middle-head>text:nth-child(1) {
+    color: #fff;
+}
+.middle-head>text:nth-child(2) {
+    color: #9f9f9f;
+}
+.invite-info{
+    height: 130rpx;
+    width: 50%;
+}
+.invite-info:nth-of-type(1) {
+    border-right: 1px solid #4c4c4c;
+}
+.invite-info>view:nth-child(1) {
+    color: #ff425b;
+    font-size: 60rpx;
+}
+.invite-info>view:nth-child(1)>.yuan {
+    line-height: 60rpx;
+    font-size: 26rpx;
+}
+.invite-info>text:nth-child(2) {
+    color: #9f9f9f;
+    font-size: 24rpx;
+}
+.detail{
+    font-size:24rpx;
+    color: #616161;
+    margin: 50rpx 0;
+}
+.detail-inline{
+    width: 260rpx;
+    border: 1px solid #616161;
+}
+.detail-list{
+    font-size: 24rpx;
+    color: #616161;
+    margin-bottom: 30rpx;
+}
+.canvas-box {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+}
+.canvas{
+    width: 500rpx;
+    height: 637rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.canvas-show{
+    z-index: 3;
+    opacity: 1;
+}

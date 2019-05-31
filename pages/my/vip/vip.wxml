@@ -1,0 +1,28 @@
+<view wx:if='{{ vip.FmTitle }}' class='header border-box'>
+  <image mode='widthFix' class='header-image' src='{{images}}stumember.jpg'></image>
+  <view class='header-box flex align-center padding-lr-30 flex-wrap'>
+    <image class='margin-r-20' mode='widthFix' src='{{ contentSrc + vip.FmIconGold }}'></image>
+    <view>
+      <view class='margin-t-10 font-30'>{{ vip.FmTitle }}</view>
+      <view class='font-22'>余额：{{ vip.FmArrivalAccountPrice }}元</view>
+    </view>
+  </view>
+</view>
+<view wx:for='{{vipList}}' wx:key='{{index}}' class='border-box padding-lr-30 margin-t-30 margin-b-30'>
+  <button open-type='getUserInfo' bindgetuserinfo='getUserInfo' data-index='{{index}}' class='list'>
+    <view class='list-head border-box'>
+      <image class='list-bg' mode='widthFix' src='{{item.FmBackgroundMap ? contentSrc + item.FmBackgroundMap : "/images/vip-bg1.png"}}'></image>
+    </view>
+    <view class='list-content white-bg flex justify-between align-center padding-lr-30 padding-tb-30'>
+      <view class='list-context'>
+        <view class='font-30 black-color margin-b-20'>{{item.FmTitle}}</view>
+        <view class='font-24 gray-color margin'>充值{{item.FmSellMoney}}元实际到账{{item.FmArrivalAccountPrice}}元</view>
+        <view class='font-24 gray-color'>此卡一经出售，不予退款</view>
+      </view>
+      <view class='list-btn font-24'>充值</view>
+    </view>
+  </button>
+</view>
+<view wx:if='{{vipList.length<=0}}' class='noData'>
+  暂无会员卡
+</view>

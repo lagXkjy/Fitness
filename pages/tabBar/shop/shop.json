@@ -1,0 +1,11 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "健身预约",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "swiper-banner" : "/component/swiperBanner/swiperBanner",
+    "week": "/component/week/week",
+    "course-info": "/component/courseInfo/courseInfo"
+  }
+}

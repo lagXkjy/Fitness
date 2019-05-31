@@ -1,0 +1,6 @@
+<!-- pages/shop/rules/rules.wxml -->
+<view class="wrapper border-box font-24">
+    <view>
+        <text>{{ rule }}</text>
+    </view>
+</view>

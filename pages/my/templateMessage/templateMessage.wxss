@@ -1,0 +1,93 @@
+page {
+  background: #f0f0f0;
+}
+
+.margin-b {
+  margin-bottom: -30rpx;
+}
+
+.form {
+  height: 63rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0 30rpx;
+}
+
+.sf-box {
+  width: 30rpx;
+  height: 24rpx;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.sf-box::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sf {
+  transform: scale(0.5, 0.5);
+  width: 30rpx;
+  height: 24rpx;
+  line-height: 0rpx;
+  text-align: left;
+  box-sizing: border-box;
+  margin-left: -6rpx;
+  margin-top: 6rpx;
+  float: left;
+}
+
+.float {
+  float: left;
+  height: 24rpx;
+}
+
+.input {
+  width: 70%;
+  height: 63rpx;
+  border: 1px solid #c2c2c2;
+  padding-left: 10rpx;
+}
+
+.submit {
+  height: 63rpx;
+  width: 125rpx;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.submit::after {
+  border: none;
+  border-radius: 0;
+}
+
+.two-image {
+  width: 40rpx;
+  margin-top: 26rpx;
+  margin-left: 20rpx;
+}
+
+.image-right {
+  width: 50rpx;
+  margin: 0 20rpx;
+}
+
+.image-left {
+  transform: rotateZ(180deg);
+}
+
+.two-top {
+  margin-bottom: 70rpx;
+}
+
+.image-point {
+  width: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.image-point-min {
+  width: 30rpx;
+}

@@ -1,0 +1,18 @@
+<!-- pages/shop/getInvite/getInvite.wxml -->
+<image wx:if='{{bannerAndRules.IcrInvitationBanner}}' class="banner" src='{{contentSrc + bannerAndRules.IcrInvitationBanner}}' mode="widthFix" />
+<view class="footer border-box padding-l-30 padding-r-30">
+    <view class="content border-box">
+        <view class="header">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <!-- <image class="header" mode="aspectFit" src="https://tse4.mm.bing.net/th?id=OIP.y91Dn5xlrCnzgMGWsXCypAHaHa&pid=Api&dpr=1" /> -->
+        <view class="objective text-center font-30">
+            <text class="my-color">@</text>
+            <open-data class="my-color" type="userNickName"></open-data>
+            <text>邀你健身</text>
+        </view>
+        <view class="tips font-weight font-34 text-center">一起来健身吧~</view>
+        <button open-type="getUserInfo" bindgetuserinfo='getUserInfo' class='to-buy flex padding-30 font-30 justify-center margin-b-20'>立即约课</button>
+        <button open-type="share" class='invite-btn flex padding-30 font-30 justify-center'>邀请好友赢代金券</button>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<view class='border-box wrapper flex flex-direction align-center'>
+  <image mode='widthFix' class='image' src='/images/buySuccess.png'></image>
+  <view class='font-weight font-38 black-color margin-t-40'>恭喜您预约成功！</view>
+  <view class='font-34 margin-t-40'>课程验证码：
+    <text class='theme-color font-weight'>{{CodAuthNum}}</text>
+  </view>
+  <view bindtap='skipMyCourseDetail' class='btn white-color font-34 padding-tb-20 theme-bg flex justify-center margin-t-40'>查看订单详情</view>
+  <view bindtap='toCoupon' wx:if='{{shareSuccess}}' class='btn btn-share theme-color margin-t-20 font-34 padding-tb-20 white-bg flex justify-center margin-t-40'>您获取一张优惠券，快去看看吧</view>
+  <!--  团课显示二维码  -->
+  <block wx:if='{{isGroup === 1}}'>
+    <image bindtap='lookImage' mode='widthFix' class='code-image block' src='{{corInfo.CoaWeChatQrCode&&(teaSrc+corInfo.CoaWeChatQrCode)}}'></image>
+    <view class='gray-color font-22 flex justify-center'>
+      扫一扫上面的二维码图案，{{isGroup?"加入onegroups大本营 ":"加教练微信"}}
+    </view>
+  </block>
+
+</view>

@@ -1,0 +1,22 @@
+.right {
+  width: 18rpx;
+}
+
+.left-image {
+  width: 34rpx;
+}
+
+.title-image {
+  width: 38rpx;
+}
+
+.btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 80rpx;
+}
+
+.wrapper {
+  padding-bottom: 80rpx;
+}

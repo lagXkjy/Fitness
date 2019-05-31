@@ -1,0 +1,6 @@
+<block wx:for='{{atyInfos}}' wx:key='{{index}}'>
+  <activity-list bindtap='skipActivityDeail' data-index='{{index}}' obj='{{item}}'></activity-list>
+</block>
+<view wx:if='{{atyInfos.length<=0}}' class='noData'>
+  暂无活动
+</view>

@@ -1,0 +1,25 @@
+<!--  学员  -->
+<block wx:if='{{userType==1}}'>
+  <!--  定位门店  -->
+  <view class='border-box position white-color flex justify-center align-center font-24'>
+    <picker bindchange='areaChange' range-key='CtyName' range='{{areaList}}' value='{{areaIndex}}'>
+      <view class='flex justify-center align-center'>
+        <text class='margin-r-10'>{{areaList[areaIndex].CtyName}}</text>
+        <view class='triangle'></view>
+      </view>
+    </picker>
+  </view>
+  <swiper-banner bindclickSwiper='clickSwiper' arr='{{swiperList}}' i-url='{{bannerSrc}}' height='240'></swiper-banner>
+  <block wx:for='{{storeInfos}}' wx:key='{{index}}'>
+    <view bindtap='skipCourseList' data-index='{{index}}' class='margin-t-20 padding-lr-20 shop-list border-box'>
+      <image class='shop-list-image' src='{{shopSrc+item.StrImgName}}'></image>
+      <view class='shop-list-box padding-lr-20 border-box white-color flex flex-direction justify-end'>
+        <view class='font-28 padding-lr-20 margin-b-10 border-box'>{{item.StrName}}</view>
+        <view class='font-20 padding-lr-20 margin-b-20 border-box'>{{item.StrConAds}}</view>
+      </view>
+    </view>
+  </block>
+</block>
+<view wx:if='{{corInfos.length<=0 && storeInfos.length<=0}}' class='noData'>
+  暂无数据
+</view>

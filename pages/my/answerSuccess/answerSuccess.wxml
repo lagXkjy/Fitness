@@ -1,0 +1,6 @@
+
+<image mode='widthFix' class='win block' src='/images/win.png'></image>
+<view class='thanks font-weight text-center'>谢谢您的参与</view>
+<view class='footer border-box padding-lr-30'>
+  <view bindtap='goHome' class='theme-bg white-color flex align-center justify-center'>返回首页</view>
+</view>

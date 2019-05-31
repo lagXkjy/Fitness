@@ -1,0 +1,11 @@
+<view wx:for='{{listData}}' wx:key='{{index}}' class='margin-t-20'>
+  <course-info-top buy-time='{{item.buyTime}}' now='{{item.MppSurplus}}' end='{{item.MppNum}}'></course-info-top>
+  <view bindtap='discountDetail' data-index='{{index}}' class='padding-lr-30 flex align-center justify-between font-30 white-bg context'>
+    <view class='black-color'>{{item.PpkTitle}}</view>
+    <view class='theme-color'>¥{{item.PpkMoney}}</view>
+  </view>
+  <course-info-bottom term='{{item.term}}' bindcheck='discountDetail' data-index='{{index}}'></course-info-bottom>
+</view>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无数据
+</view>

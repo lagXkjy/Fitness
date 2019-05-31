@@ -1,0 +1,13 @@
+<!--pages/shop/invite/invite.wxml i-url=''-->
+<swiper-banner bindclickSwiper='clickSwiper' height='240' arr='{{swiperList}}' i-url='{{bannerSrc}}'></swiper-banner>
+<view class='border-box padding-lr-30 padding-tb-40 context'>
+    <view class='theme-color font-28 margin-b-30'>
+        邀请好礼规则
+    </view>
+    <view wx:for='{{contextList}}' wx:key='{{index}}' class='font-24 gray-color'>
+       {{item}}
+    </view> 
+</view>
+<view bindtap="toCourseList" class='footer theme-bg flex justify-center align-center font-30 white-color'>
+    我要参加
+</view>

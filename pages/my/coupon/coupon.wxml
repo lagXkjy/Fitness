@@ -1,0 +1,30 @@
+<view bindtap='clickLiist' data-index='{{index}}' class='padding-lr-30 margin-t-30 border-box white-color' wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='list flex {{item.overdue ? "list-bg-overdue" : item.bg}}'>
+    <view wx:if='{{isPayment&&item.select}}' class='select flex justify-center align-end'>
+      <image mode='widthFix' src='/images/yes.png'></image>
+    </view>
+    <view class='list-content flex align-center justify-between'>
+      <view class='flex align-center'>
+        <view class='flex align-end list-price-box border-box'>
+          <text class='font-weight list-price'>{{item.ScpFValue}}</text>
+          <text class='font-30'>元</text>
+        </view>
+        <view class='font-28'>{{item.ScpTitle}}</view>
+      </view>
+      <view wx:if='{{!item.overdue&&!isPayment}}' class='list-btn flex justify-center align-center font-24 {{item.btn}}'>
+        去使用
+      </view>
+    </view>
+    <view class='list-bottom'>
+      <view class='list-point-box flex justify-around border-box'>
+        <view class='list-point {{item.overdue? "list-b-overdue" : item.bottomBg}}' wx:for='{{43}}' wx:key='{{index}}' wx:for-item='key'></view>
+      </view>
+      <view class='list-prompt font-24 flex align-center padding-lr-30 {{item.overdue? "list-b-overdue" : item.bottomBg}}'>
+        {{item.ScpIntro}}
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无优惠券
+</view>

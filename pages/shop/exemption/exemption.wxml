@@ -1,0 +1,12 @@
+<view class='banner border-box'>
+  <image class='banner-image' src='/images/banner-exemption.png'></image>
+</view>
+<week is-fitness='{{true}}' class='border-b-1 border-t-1' bindweekChange='weekChange'></week>
+<block wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='margin-t-20 border-t-1 border-b-1'>
+    <course-info data-index='{{index}}' bindclicklist='clickList' obj='{{item}}' i-url='{{teaSrc}}' is-buy='{{true}}'></course-info>
+  </view>
+</block>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无数据
+</view>

@@ -1,0 +1,32 @@
+<view class='header border-box'>
+  <image lazy-load='true' mode='widthFix' class='header-image' src='{{images}}stumember.jpg'></image>
+  <view class='header-box flex align-center padding-lr-30 flex-wrap'>
+    <open-data type='userAvatarUrl' class='header-portrait margin-r-20'></open-data>
+    <view class='flex algin-center header-right flex-wrap'>
+      <open-data type='userNickName' class='line-50 font-28 white-color userName margin-r-20 border-box'></open-data>
+      <view wx:if='{{FmTitle && FmTitle !== false}}' bindtap='skipVip' class='flex align-center theme-bg white-color font-24 head-vip'>
+        <image mode='aspectFit' src='{{ contentSrc + FmWhiteIcon }}'></image>
+        <text>{{FmTitle}} ></text>
+      </view>
+      <view wx:if="{{StuIntegral}}" class="line-50 font-28 white-color margin-l-20">积分:{{StuIntegral}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if='{{!FmTitle && FmTitle !== false}}' bindtap='skipVip' class='border-box border-b-1 white-bg padding-lr-30 padding-tb-30 flex justify-between margin-b-20 align-center'>
+  <view class='flex align-center'>
+    <image class='vip-image margin-r-20' mode='widthFix' src='/images/crown.png'></image>
+    <text class='font-28 black-color'>会员卡充值</text>
+  </view>
+  <image mode='widthFix' class='right-image' src='/images/right.png'></image>
+</view>
+<view class='border-t-1'>
+  <block wx:for='{{stuList}}' wx:key='{{index}}'>
+    <view bindtap='skip' data-url='{{item.url}}' class='border-box border-b-1 white-bg padding-lr-30 padding-tb-30 flex justify-between algin-center'>
+      <view class='flex align-center'>
+        <image class='list-image margin-r-20' mode='widthFix' src='{{item.image}}'></image>
+        <text class='font-30 black-color'>{{item.title}}</text>
+      </view>
+      <image mode='widthFix' class='right-image' src='/images/right.png'></image>
+    </view>
+  </block>
+</view>

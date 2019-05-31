@@ -1,0 +1,19 @@
+<course-info obj='{{corInfo}}' i-url='{{teaSrc}}'></course-info>
+<view class='margin-t-20 border-t-1'>
+  <block wx:for='{{listData}}' wx:key='{{index}}'>
+    <view class='border-b-1 flex justify-between align-center padding-30 white-bg font-24 gray-color'>
+      <view class='flex align-center'>
+        <image mode='widthFix' class='left-image margin-r-20' src='{{item.CctStatus!=2?"/images/time.png":"/images/time-end.png"}}'></image>
+        <text class='margin-r-20 {{item.CctStatus!=2&&"color"}}'>{{index+1}}课时</text>
+        <text wx:if='{{item.showTime}}'>{{item.showTime}}</text>
+      </view>
+      <view class='flex align-center justify-end'>
+        <text wx:if='{{item.CctStatus==2}}' class='margin-l-30'>已结束</text>
+        <text wx:if='{{userType==1&&item.CctStatus!=2}}' class='margin-l-30 theme-color'>未开始</text>
+        <view wx:if='{{userType!=1&&item.CctStatus==0}}' bindtap='newTime' class='btn theme-color font-22 border-box'>设置</view>
+        <view wx:if='{{userType!=1&&item.CctStatus==1}}' data-index='{{index}}' bindtap='setCourseTime' class='btn theme-color font-22 border-box'>修改</view>
+        <view bindtap='endTime' wx:if='{{userType!=1&&item.CctStatus==1}}' data-index='{{index}}' class='btn theme-color font-22 border-box margin-l-10'>结束</view>
+      </view>
+    </view>
+  </block>
+</view>

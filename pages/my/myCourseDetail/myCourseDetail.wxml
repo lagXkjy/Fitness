@@ -1,0 +1,70 @@
+<course-info obj='{{corInfo}}' i-url='{{teaSrc}}'></course-info>
+<view bindtap='skipCheckCourseTime' class='border-t-1 border-b-1 flex justify-between align-center padding-30 border-box white-bg'>
+  <view class='gray-color font-24 flex align-center'>
+    <image mode='widthFix' class='list-image margin-r-10' src='/images/time.png'></image>
+    <text class='margin-r-10'>上课时间:</text>
+    <text wx:if='{{isGroup===0}}'>{{orderInfo.courseTime}}</text>
+    <text wx:else>{{corInfo.showTime}}</text>
+  </view>
+  <image wx:if='{{isGroup===0}}' mode='widthFix' class='right' src='/images/right.png'></image>
+</view>
+<view class='border-b-1 flex justify-between align-center padding-30 border-box white-bg'>
+  <view class='gray-color font-24 flex align-center'>
+    <image mode='widthFix' class='list-image margin-r-10' src='/images/code.png'></image>
+    <text class='margin-r-10'>验证码:</text>
+    <text class='theme-color font-28 font-weight'>{{orderInfo.CodAuthNum}}</text>
+  </view>
+</view>
+<view class='border-box white-bg margin-t-20 border-t-1 border-b-1 padding-lr-30 padding-t-30 padding-b-10'>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    订单号：{{orderInfo.CodOutradeno}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    下单时间：{{orderInfo.createTime}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    支付时间：{{orderInfo.payTime}}
+  </view>
+  <view wx:if='{{isGroup===2}}' class='black-color font-24 width-100 point margin-b-20'>
+    支付方式：{{orderInfo.CoPayMethod}}
+  </view>
+  <view wx:if='{{isGroup!==0}}' class='black-color font-24 width-100 point margin-b-20'>
+    上课地点：{{corInfo.CorAdress}}
+  </view>
+  <view wx:if='{{isGroup!==0}}' class='black-color font-24 width-100 point margin-b-20'>
+    上课人数：{{orderInfo.CodBuyNum}}人
+  </view>
+  <view wx:if='{{isGroup!==0}}' class='black-color font-24 width-100 point margin-b-20'>
+    支付金额：¥{{orderInfo.CodPrice}}
+  </view>
+  <view wx:if='{{isGroup===0}}' class='black-color font-24 width-100 point margin-b-20'>
+    支付价格：{{corInfo.price}}
+  </view>
+  <view wx:if='{{isGroup===0}}' class='black-color font-24 width-100 point margin-b-20'>
+    课时：{{orderInfo.CodClaTimes}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    学员名称：{{orderInfo.CodName}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    手机号码：{{orderInfo.CodPhone}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    订单状态：{{orderInfo.CodPayType==1?"已预约":"已完成"}}
+  </view>
+  <view wx:if='{{isGroup===0}}' class='black-color font-24 width-100 point margin-b-20'>
+    上课地址：{{corInfo.CorAddress}}
+  </view>
+</view>
+<image bindtap='lookImage' mode='widthFix' class='code-image block' src='{{corInfo.CoaWeChatQrCode&&(teaSrc+corInfo.CoaWeChatQrCode)}}'></image>
+<view class='gray-color font-22 flex justify-center'>
+  扫一扫上面的二维码图案，{{isGroup?"加入onegroups大本营 ":"加教练微信"}}
+</view>
+<black wx:if='{{isGroup!==0}}'>
+  <view class='border-box padding-lr-30 margin-t-30'>
+    <view bindtap='delete' class='btn theme-color flex align-center justify-center font-30 border-box white-bg'>删除订单</view>
+  </view>
+</black>
+<view class='border-box padding-lr-30 margin-t-30 margin-b-30'>
+  <view bindtap='goHome' class='btn theme-color flex align-center justify-center font-30 border-box white-bg'>返回首页</view>
+</view>

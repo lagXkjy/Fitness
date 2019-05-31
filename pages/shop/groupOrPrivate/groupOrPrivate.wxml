@@ -1,0 +1,12 @@
+<view wx:for='{{listData}}' wx:key='{{index}}' bindtap='skipCourseList' data-type='{{item.isGroup}}' class='border-box padding-lr-30 margin-t-30'>
+  <view class='white-bg flex justify-between border-1 list'>
+    <view class='border-box list-context padding-lr-30 flex justify-center flex-direction'>
+      <view class='font-34 black-color'>{{item.CnTitle}}</view>
+      <text class='font-26 gray-color margin-t-10 margin-b-10 point-2'>{{item.CnIntro}}</text>
+      <view class='flex'>
+        <view class='font-26 flex theme-bg white-color list-btn'>去看看 ></view>
+      </view>
+    </view>
+    <image lazy-load='true' src='{{navSrc}}{{item.CnPicName}}'></image>
+  </view>
+</view>

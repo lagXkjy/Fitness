@@ -1,0 +1,160 @@
+<wxs src="../../../common/filter.wxs" module='filter'/>
+<block wx:if='{{isGroup !== 0}}'>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>课程：</view>
+      <view class='context point gray-color'>{{corInfo.CorName}}</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>时间：</view>
+      <view class='context point gray-color'>{{corInfo.showTime}}</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>地点：</view>
+      <view class='context point gray-color'>{{corInfo.CorAdress}}</view>
+    </view>
+  </view>
+  <picker wx:if='{{isGroup === 1}}' bindchange='changePeople' range='{{people}}' value='{{peopleIndex}}'>
+    <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+      <view class='box flex align-center justify-between'>
+        <view class='black-color margin-r-10 font-weight'>人数：</view>
+        <view class='context point gray-color'>{{people[peopleIndex]}}人</view>
+      </view>
+      <image class='right' mode='widthFix' src='/images/right.png'></image>
+    </view>
+  </picker>
+  <view wx:if='{{isGroup === 2}}' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10 font-weight'>人数：</view>
+      <view class='context point gray-color'>2</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>总价：</view>
+      <view class='context point gray-color'>¥{{total}}</view>
+    </view>
+  </view>
+</block>
+<block wx:if='{{isGroup === 0}}'>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>教练：</view>
+      <view class='context point gray-color'>{{corInfo.CoaName}}</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>课时：</view>
+      <view class='context point gray-color'>{{corInfo.CorClaTimes}}课时</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>地点：</view>
+      <view class='context point gray-color'>{{corInfo.CorAdress}}</view>
+    </view>
+  </view>
+  <view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+    <view class='box flex align-center justify-between'>
+      <view class='black-color margin-r-10'>价格：</view>
+      <view class='context point gray-color'>¥{{total}}</view>
+    </view>
+  </view>
+</block>
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10 font-weight'>姓名：</view>
+    <input type='text' bindinput='userName' class='black-color context block' placeholder='请填写姓名' placeholder-class='gray-color' value='{{userName}}'></input>
+  </view>
+</view>
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10 font-weight'>手机：</view>
+    <input bindinput='userPhone' type='number' maxlength='11' class='black-color context block' value='{{userPhone}}' placeholder-class='gray-color' placeholder='请填写手机号'></input>
+  </view>
+</view>
+<view wx:if='{{isGroup === 1 && ScpCount > 0}}' bindtap='selectCoupon' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>优惠券：</view>
+    <view class='context point gray-color'>{{coupon.ScpId > 0 ? coupon.ScpTitle : "未使用优惠券"}}</view>
+  </view>
+  <image class='right' mode='widthFix' src='/images/right.png'></image>
+</view>
+<view wx:if='{{isGroup === 1 && CashCount > 0}}' bindtap='selectCash' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>代金券：</view>
+    <view class='context point gray-color'>{{coupon.RcId > 0 ? coupon.RcFaceValue+'元' : "未使用代金券"}}</view>
+  </view>
+  <image class='right' mode='widthFix' src='/images/right.png'></image>
+</view>
+<view wx:if='{{isGroup === 1}}' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>兑换码：</view>
+    <input bindinput='inputRedeemCode' type='text' maxlength='15' class='black-color context block' placeholder-class='gray-color' placeholder='请填写兑换码（非必填）'></input>
+  </view>
+</view>
+<view wx:if='{{isGroup === 1 && monthCardNum > 0&&people[peopleIndex]==1}}' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>月卡：</view>
+    <view class='flex justify-between align-center context'>
+      <view class='gray-color'>还可预约
+        <text class='theme-color'> {{monthCardNum}} </text>次
+      </view>
+      <switch bindchange='monthCardChange' color='#ff425b' checked='{{monthCardStatus}}' />
+    </view>
+  </view>
+</view>
+<view wx:if='{{isGroup === 1 && corInfo.IsUsePackage && discount > 0}}' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>课程包：</view>
+    <view class='flex justify-between align-center context'>
+      <view class='gray-color'>您还有
+        <text class='theme-color'> {{discount}} </text>节课未使用
+      </view>
+      <switch bindchange='switchChange' color='#ff425b' checked='{{switchStatus}}' />
+    </view>
+  </view>
+</view>
+<view wx:if='{{isGroup === 1}}' class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>积分：</view>
+    <view class='flex justify-between align-center context'>
+      <view wx:if="{{integralStatus}}" class='gray-color'>
+        <text >使用 {{showIntegralPay}} 积分抵扣</text>
+        <text class='black-color'>¥{{filter.money(showIntegralPay / 100)}}</text>
+      </view>
+      <view wx:else class='gray-color'>
+        <text>积分抵扣比例100：1</text>
+      </view>
+      <switch bindchange='integralChange' color='#ff425b' checked='{{integralStatus}}' />
+    </view>
+  </view>
+</view>
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>余额支付：</view>
+    <view class='context point flex justify-between align-center gray-color'>
+      <view class='{{balance <= 0 && "font-26"}}'>¥{{balance}}</view>
+      <!-- <view wx:if='{{balance <= 0}}' class='font-26'>您的余额不足，快去充值吧</view> -->
+      <view bindtap='toRecharge' class='recharge font-24'>充值</view>
+    </view>
+  </view>
+</view>
+<view class='padding-30 font-22 gray-color text-center'>
+  温馨提示：开始时间前6个小时取消预约，支持全额退款；开始时间前6小时后取消预约，不支持退款。
+</view>
+<view class="prompt"></view>
+<view class='footer border-box flex'>
+  <view class='footer-price white-bg flex align-center font-26 black-color padding-l-30'>
+    <text class='margin-r-10'>支付金额</text>
+    <text class='theme-color font-weight'>¥{{allPrice}}</text>
+  </view>
+  <form class='form' report-submit='true' bindsubmit='submit'>
+    <button form-type='submit' class='btn theme-bg font-30 white-color flex justify-center align-center'>提交订单</button>
+  </form>
+</view>

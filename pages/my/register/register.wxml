@@ -1,0 +1,28 @@
+<!-- pages/my/register/register.wxml -->
+<block wx:if='{{!Register}}'>
+    <image mode="widthFix" src="/images/logo.png" class="logo" />
+    <view class="list font-30 flex justify-between white-bg border-box padding-lr-30">
+        <view class="flex align-center">姓名</view>
+        <view>
+            <input bindinput="inputName" type="text" placeholder="请输入您的姓名" placeholder-class="placeholder" />
+        </view>
+    </view>
+    <view class="list font-30 flex justify-between white-bg border-box padding-lr-30">
+        <view class="flex align-center">手机号</view>
+        <view>
+            <input bindinput="inputPhone" maxlength="11" type="number" placeholder="请输入您的手机号" placeholder-class="placeholder" />
+        </view>
+    </view>
+    <picker mode="date" value="{{Birthday}}" start="1930-01-01" end="{{end}}" bindchange="bindDateChange">
+        <view class="list font-30 flex justify-between white-bg border-box padding-lr-30">
+            <view class="flex align-center">出生年月</view>
+            <view class='flex align-center justify-between'>
+                <view class="{{!Birthday && 'placeholder'}}">{{Birthday ? Birthday : '请选择'}}</view>
+                <image class="right" mode="widthFix" src="/images/right.png" />
+            </view>
+        </view>
+    </picker>
+    <view class="border-box padding-lr-30">
+        <button hover-class='none' open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="flex justify-center align-center white-color font-34">提交注册</button>
+    </view>
+</block>

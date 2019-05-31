@@ -1,0 +1,27 @@
+<view class='banner border-box'>
+  <image class='banner-image' src='{{StrInfo.StrImgName?shopSrc+StrInfo.StrImgName:""}}'></image>
+  <view class='banner-text white-color font-38 flex justify-center'>{{StrInfo.StrName}}</view>
+  <view bindtap='skipShopDetail' class='banner-btn theme-color font-20 border-box flex justify-center align-center'>点击了解</view>
+</view>
+<view wx:if='{{isGroup===1}}' bindtap='changeHouse' class='all-course white-bg font-26 black-color flex justify-center align-center border-box'>
+  <text>{{house[houseIndex].name}}</text>
+  <image style='{{isHouse&&"transform:rotate(180deg);"}}' mode='widthFix' class='all-image margin-l-10 block' src='/images/bottom.png'></image>
+</view>
+<view class='border-b-1 border-t-1'>
+  <week bindweekChange='weekChange' is-fitness='{{true}}'></week>
+</view>
+<view hidden='{{!isHouse}}' class='all border-box'>
+  <block wx:for='{{house}}' wx:key='{{index}}'>
+    <view bindtap='changeHourse' data-index='{{index}}' class='all-list white-bg font-22 padding-lr-30 black-color border-b-1 flex align-center'>
+      {{item.name}}
+    </view>
+  </block>
+</view>
+<block wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='margin-t-20 border-t-1 border-b-1'>
+    <course-info data-index='{{index}}' bindclicklist='clickList' obj='{{item}}' i-url='{{teaSrc}}' is-buy='{{true}}'></course-info>
+  </view>
+</block>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无数据
+</view>

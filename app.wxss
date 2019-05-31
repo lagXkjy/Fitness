@@ -1,0 +1,15 @@
+/**app.wxss**/
+@import "/common/common.wxss";
+@import "/libs/wxParse/wxParse.wxss";
+
+page {
+  background: #f6f6f7;
+}
+
+.noData {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 300rpx;
+  color: #888;
+}

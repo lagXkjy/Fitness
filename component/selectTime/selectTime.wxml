@@ -1,0 +1,9 @@
+<picker bindchange='change' bindcolumnchange='columnChange' mode='multiSelector' value='{{timeIndex}}' range='{{timeData}}' range-key='str'>
+  <view class='wrapper'>
+    <view>
+      <text class='title'>{{context}}</text>
+      <text class='time'>{{timeContext}}</text>
+    </view>
+    <image mode='widthFix' class='right' src='/images/right.png'></image>
+  </view>
+</picker>

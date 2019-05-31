@@ -1,0 +1,55 @@
+<view class='header padding-lr-30 border-box theme-bg flex align-center'>
+  <image mode='widthFix' class='header-image' src='/images/price-1.png'></image>
+  <view class='font-30 white-color margin-r-10 margin-l-20'>余额</view>
+  <view class='font-30 font-weight white-color'>¥{{balance}}</view>
+</view>
+<view class='tab flex'>
+  <view bindtap='bindTab' data-index='0' class='tab-item border-b-1 black-color font-30 flex align-center justify-center border-box {{tabIndex===0&&"tab-current"}}'>
+    充值&课程优惠包
+  </view>
+  <view bindtap='bindTab' data-index='1' class='tab-item border-b-1 black-color font-30 flex align-center justify-center border-box {{tabIndex===1&&"tab-current"}}'>
+    消费明细
+  </view>
+</view>
+<block wx:if='{{tabIndex===0}}'>
+ <!--
+  <view class='margin-t-40 black-color padding-l-30 font-30'>
+    充值
+  </view>
+  <view class='flex padding-l-30 justify-start flex-wrap list-box'>
+    <button bindgetuserinfo='getBalanceRechange' open-type='getUserInfo' data-index='{{index}}' wx:for='{{rechargeList}}' wx:key='{{index}}' class='list theme-color font-26 flex align-center justify-center margin-t-40 border-box'>
+      <text>¥</text>
+      <text class='font-weight'>{{item}}</text>
+    </button>
+  </view>
+  -->
+  <block wx:if='{{giftList.length>0}}'>
+    <view class='margin-t-40 black-color padding-l-30 font-30'>
+      课程优惠包
+    </view>
+    <view class='flex padding-l-30 justify-start flex-wrap list-box'>
+      <button bindgetuserinfo='getConfirmOrder' open-type='getUserInfo' data-index='{{index}}' wx:for='{{giftList}}' wx:key='{{index}}' class='list theme-color font-26 flex flex-direction align-center justify-center margin-t-40 border-box'>
+        <view>
+          <text>¥</text>
+          <text class='font-weight'>{{item.PpkPrice}}</text>
+        </view>
+        <view class='font-24 margin-t-10'>
+          {{item.PpkNum}}节团课
+        </view>
+      </button>
+    </view>
+  </block>
+</block>
+<block wx:if='{{tabIndex===1}}'>
+  <view wx:for='{{detailList}}' wx:key='{{index}}' class='padding-30 border-b-1 flex align-center justify-between'>
+    <view class='detail-left'>
+      <view class='font-30 margin-b-30'>{{item.FBTitle}}</view>
+      <view class='font-24 gray-color'>{{item.showTime}}</view>
+    </view>
+    <view class='font-36'>
+      <text class='gray-color margin-r-10'>{{item.FBPayType===1?"+":"-"}}</text>
+      <text class='theme-color'>¥{{item.FBPayMoney}}</text>
+    </view>
+
+  </view>
+</block>

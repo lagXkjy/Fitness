@@ -1,0 +1,55 @@
+.wrapper {
+  padding: 10rpx 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.code {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.term {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #ff425b;
+}
+
+.code-num {
+  font-size: 28rpx;
+  color: #ff425b;
+  font-weight: bold;
+}
+
+.btn {
+  color: #ff425b;
+  font-size: 24rpx;
+  border: 1px solid #ff425b;
+  border-radius: 4rpx;
+  padding: 5rpx 20rpx;
+  margin-left: 20rpx;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+.btn-box {
+  display: flex;
+  align-items: flex-end;
+}
+
+.timeImage {
+  width: 38rpx;
+  margin-right: 20rpx;
+}
+
+.no {
+  color: #888;
+  border: 1px solid #888;
+}

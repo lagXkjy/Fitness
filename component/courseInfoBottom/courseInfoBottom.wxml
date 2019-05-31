@@ -1,0 +1,33 @@
+<view class='wrapper'>
+  <view class='text'>
+    <block wx:if='{{showTime}}'>
+      <image class='timeImage' mode='widthFix' src='/images/time.png'></image>
+      <text class='code'>{{showTime}}</text>
+    </block>
+    <block wx:if='{{isOrder&&tabIndex==0}}'>
+      <text class='code'>验证码：</text>
+      <text class='code-num'>{{isOrder}}</text>
+    </block>
+    <block wx:if='{{isOrder&&tabIndex==1}}'>
+      <text class='code'>验证码：</text>
+      <text class='code'>{{isOrder}}</text>
+    </block>
+    <block wx:if='{{isOrdere}}'>
+      <text class='code'>预约</text>
+    </block>
+    <block wx:if='{{tabText}}'>
+      <text class='code'>{{tabText}}</text>
+    </block>
+    <block wx:if='{{term}}'>
+      <text class='code'>有效期：</text>
+      <text class='term'>{{term}}</text>
+    </block>
+  </view>
+  <view class='btn-box'>
+    <view wx:if='{{isSet}}' bindtap='clickSet' class='btn'>设置上课时间</view>
+    <view wx:if='{{isQuest}}' bindtap='clickQuest' class='btn'>参与问卷</view>
+    <view wx:if='{{refundType===2&&isRefund&&isTuiKuan}}' bindtap='clickRefund' class='btn'>退款</view>
+    <view wx:if='{{refundType===3}}' class='btn no'>已退款</view>
+    <view bindtap='clickBtn' class='btn'>查看</view>
+  </view>
+</view>

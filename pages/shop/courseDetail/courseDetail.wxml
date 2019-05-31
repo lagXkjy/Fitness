@@ -1,0 +1,59 @@
+<import src='/libs/wxParse/wxParse.wxml' />
+<view class='wrapper'>
+  <swiper-banner height='300' arr='{{CorBanners}}' i-url='{{isGroup===2?exemptionBanner:courseSrc}}'></swiper-banner>
+  <view class='margin-t-20 border-t-1 border-box white-bg padding-30 flex justify-between align-center border-b-1'>
+    <view class='info-left border-box'>
+      <view class='font-36 black-color font-weight margin-b-20'>{{corInfo.CoaName}}</view>
+      <view class='font-26 gray-color'>
+        <text>{{corInfo.CoaAbstract}}</text>
+      </view>
+    </view>
+    <image class='head-image border-box' src='{{corInfo.CoaHeadPic&&teaSrc+corInfo.CoaHeadPic}}'></image>
+  </view>
+  <view class='padding-30 border-box flex justify-between algin-center border-b-1 white-bg'>
+    <view class='left border-box flex align-center'>
+      <image mode='widthFix' class='left-image margin-r-20' src='/images/amcount.png'></image>
+      <view class='font-26 black-color left-context point'>
+        <text wx:if='{{isGroup !== 0}}'>¥ {{corInfo.CorRePrice}}/节</text>
+        <text wx:else>¥ {{corInfo.CorRePrice}}/{{corInfo.CorClaTimes}}课时</text>
+      </view>
+    </view>
+  </view>
+  <view class='padding-30 border-box flex justify-between algin-center border-b-1 white-bg'>
+    <view class='left border-box flex align-center'>
+      <image mode='widthFix' class='left-image margin-r-20' src='/images/time.png'></image>
+      <view class='font-26 black-color left-context point'>
+        <text wx:if='{{isGroup !== 0}}'>{{corInfo.showTime}}</text>
+        <text wx:else>与教练预约授课时间</text>
+      </view>
+    </view>
+  </view>
+  <view bindtap='checkAddress' class='padding-30 border-box flex justify-between algin-center border-b-1 white-bg'>
+    <view class='left border-box flex align-center'>
+      <image mode='widthFix' class='left-image margin-r-20' src='/images/address.png'></image>
+      <view class='font-26 black-color left-context point'>{{corInfo.CorAdress}}</view>
+    </view>
+    <image mode='widthFix' src='/images/right.png' class='right-image'></image>
+  </view>
+  <block wx:if='{{corInfo.CorDesp}}'>
+    <view class='border-t-1 border-b-1 white-bg padding-30 black-color flex align-center margin-t-20'>
+      <image mode='widthFix' class='title-image margin-r-10' src='/images/fitness.png'></image>
+      <text class='font-30 black-color black-color'>课程简介</text>
+    </view>
+    <view class='padding-30 white-bg font-26'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    </view>
+  </block>
+  <view class='border-t-1 border-b-1 white-bg padding-30 black-color flex align-center margin-t-20'>
+    <image mode='widthFix' class='title-image margin-r-10' src='/images/amazing.png'></image>
+    <text class='font-30 black-color'>注意事项</text>
+  </view>
+  <view class='white-bg black-color font-26 padding-30'>
+    <text wx:if='{{corInfo.StrAction}}'>{{corInfo.StrAction}}</text>
+    <view class='margin-t-20'>
+      重要:成功预约本课程即表示已阅读并同意
+      <text bindtap='disclaimer' class='theme-color'>《One groups运动注意事项及免责声明》</text>
+    </view>
+  </view>
+  <button open-type='getUserInfo' wx:if='{{isFull&&userType!=2}}' bindgetuserinfo='getUserInfo' class='btn font-30 margin-t-20 theme-bg white-color flex justify-center align-center footer'>立即预约</button>
+</view>

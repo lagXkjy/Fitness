@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "活动",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "activity-list": "/component/activityList/activityList"
+  }
+}

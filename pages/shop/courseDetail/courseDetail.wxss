@@ -1,0 +1,50 @@
+.head-image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 1px solid #ff425b;
+}
+
+.info-left {
+  width: 70%;
+}
+
+.right-image {
+  width: 18rpx;
+}
+
+.left {
+  width: 90%;
+}
+
+.left-image {
+  width: 36rpx;
+}
+
+.left-context {
+  width: 85%;
+}
+
+.title-image {
+  width: 44rpx;
+}
+
+.wrapper {
+  padding-bottom: 82rpx;
+}
+
+.footer {
+  height: 82rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn::after {
+  border: none;
+}

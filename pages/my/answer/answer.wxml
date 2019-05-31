@@ -1,0 +1,24 @@
+<view class='wrapper'>
+  <view class='padding-30 black-color font-24 border-box'>
+    <text class='margin-r-20 font-28'>{{listData[listIndex].subType===1?"单选题":"多选题"}}</text>
+    <text>{{listIndex + 1}}</text>
+    <text class='gray-color'>/{{listData.length}}</text>
+  </view>
+  <view class='white-bg padding-t-30 padding-lr-30 title font-30 border-b-1 margin-b-20'>
+    {{listData[listIndex].subTitle}}
+  </view>
+  <view class='border-t-1 white-bg'>
+    <view bindtap='queSelect' data-index='{{index}}' wx:for='{{listData[listIndex].subAns}}' wx:key='{{index}}' class='padding-30 font-30 border-box flex border-b-1 align-center'>
+      <view class='list {{item.select&&"list-current"}} font-26 font-weight white-color margin-r-30 flex align-center justify-center'>{{abc[index]}}</view>
+      <view class='black-color'>{{item.QACon}}</view>
+    </view>
+  </view>
+</view>
+<view class='footer white-bg padding-lr-30 flex align-center justify-between border-box'>
+  <image bindtap='reduce' mode='widthFix' class='footer-arrow' src='{{listIndex===0?"/images/arrow.png":"/images/arrow-1.png"}}'></image>
+  <view bindtap='submit' class='submit flex flex-direction justify-center align-center'>
+    <image mode='widthFix' class='footer-submit' src='/images/search.png'></image>
+    <text class='font-26'>提交</text>
+  </view>
+  <image bindtap='add' mode='widthFix' class='footer-arrow rotate' src='{{listIndex===listData.length-1?"/images/arrow.png":"/images/arrow-1.png"}}'></image>
+</view>

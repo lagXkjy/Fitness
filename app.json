@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/tabBar/shop/shop",
+    "pages/tabBar/my/my",
+    "pages/tabBar/activity/activity",
+    "pages/my/register/register",
+    "pages/my/cashCoupon/cashCoupon",
+    "pages/my/recharge/recharge",
+    "pages/my/myCourseDetail/myCourseDetail",
+    "pages/my/setTime/setTime",
+    "pages/my/myCourseList/myCourseList",
+    "pages/my/confirmOrder/confirmOrder",
+    "pages/my/templateMessage/templateMessage",
+    "pages/my/discount/discount",
+    "pages/my/discountDetail/discountDetail",
+    "pages/my/discountUse/discountUse",
+    "pages/my/answer/answer",
+    "pages/my/answerSuccess/answerSuccess",
+    "pages/my/vip/vip",
+    "pages/my/vipConfirmOrder/vipConfirmOrder",
+    "pages/my/exemptionList/exemptionList",
+    "pages/my/coupon/coupon",
+    "pages/shop/newInvite/newInvite",
+    "pages/shop/monthCard/monthCard",
+    "pages/shop/rules/rules",
+    "pages/shop/myInvite/myInvite",
+    "pages/shop/getInvite/getInvite",
+    "pages/shop/exemption/exemption",
+    "pages/shop/courseList/courseList",
+    "pages/shop/courseDetail/courseDetail",
+    "pages/shop/confirmOrder/confirmOrder",
+    "pages/shop/buySuccess/buySuccess",
+    "pages/shop/shopDetail/shopDetail",
+    "pages/shop/disclaimer/disclaimer",
+    "pages/shop/groupOrPrivate/groupOrPrivate",
+    "pages/shop/invite/invite",
+    "pages/activity/activityDetail/activityDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "健身预约",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#575757",
+    "selectedColor": "#ff425b",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/shop/shop",
+        "text": "门店",
+        "iconPath": "./images/tabBar-course1.png",
+        "selectedIconPath": "./images/tabBar-course.png"
+      },
+      {
+        "pagePath": "pages/tabBar/activity/activity",
+        "text": "活动",
+        "iconPath": "./images/tabBar-activity1.png",
+        "selectedIconPath": "./images/tabBar-activity.png"
+      },
+      {
+        "pagePath": "pages/tabBar/my/my",
+        "text": "我的",
+        "iconPath": "./images/tabBar-me1.png",
+        "selectedIconPath": "./images/tabBar-me.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序获取您的位置，用于更好的为您提供服务"
+    }
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

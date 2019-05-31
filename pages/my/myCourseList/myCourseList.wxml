@@ -1,0 +1,12 @@
+<block wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='margin-t-20 border-box'>
+    <!-- CctStatus 1 已预约 2 已完成 -->
+    <course-info-top is-right='{{true}}' show-time='{{item.showTime}}' isGroup='{{isGroup===1}}' tab-index='{{item.CodPayType===3?1:item.CctStatus==1?0:1}}' now='{{item.Already}}' end='{{item.CorClaTimes}}'></course-info-top>
+    <course-info data-index='{{index}}' bindclicklist='skipMyCourseDetail' obj='{{item}}' i-url='{{teaSrc}}'></course-info>
+    <course-info-bottom bindquest='skipAnswer' is-quest='{{isGroup&&item.CorQuesId>0&&item.CctStatus===2}}' data-index='{{index}}' tab-index='{{item.CctStatus==1?0:1}}' is-order='{{item.CodAuthNum}}' refundType='{{item.CodPayType}}' is-refund='{{item.refund}}'
+      bindrefund='clickRefund' bindcheck='skipMyCourseDetail' is-tuiKuan='{{item.IsTuiKuan}}'></course-info-bottom>
+  </view>
+</block>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无数据
+</view>

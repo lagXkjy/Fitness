@@ -1,0 +1,39 @@
+<view bindtap='discountDetail' data-index='{{index}}' class='padding-lr-30 flex align-center justify-between font-30 white-bg context'>
+  <view class='black-color'>{{ppkInfo.PpkTitle}}</view>
+  <view class='theme-color'>¥{{ppkInfo.PpkPrice}}</view>
+</view>
+<view bindtap='discountUse' class='border-t-1 border-b-1 flex justify-between align-center padding-30 border-box white-bg'>
+  <view class='gray-color font-24 flex align-center'>
+    <image mode='widthFix' class='list-image margin-r-10' src='/images/time.png'></image>
+    <text class='margin-r-10'>剩余节数:</text>
+    <text class='theme-color font-26'>{{mppInfo.MppSurplus}}节</text>
+    <text>/{{mppInfo.MppNum}}节</text>
+  </view>
+  <image mode='widthFix' class='right' src='/images/right.png'></image>
+</view>
+<view class='border-box white-bg margin-t-20 border-t-1 border-b-1 padding-lr-30 padding-t-30 padding-b-10'>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    订单号：{{ppoInfo.PpoOuttrdeno}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    下单时间：{{ppoInfo.orderTime}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    支付时间：{{ppoInfo.buyTime}}
+  </view>
+  <!-- <view class='black-color font-24 width-100 point margin-b-20'>
+    支付方式：在线支付
+  </view> -->
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    支付价格：¥{{ppkInfo.PpkPrice}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    学员姓名：{{ppoInfo.PpoName}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    手机号码：{{ppoInfo.PpoPhone}}
+  </view>
+  <view class='black-color font-24 width-100 point margin-b-20'>
+    有效期：{{mppInfo.term}}
+  </view>
+</view>

@@ -1,0 +1,23 @@
+.list-image {
+  width: 38rpx;
+}
+
+.right {
+  width: 18rpx;
+}
+
+.btn-box {
+  margin-top: 115rpx;
+}
+
+.btn {
+  height: 82rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ff425b;
+}
+
+
+.code-image {
+  width: 184rpx;
+  margin: 30rpx auto 30rpx;
+}

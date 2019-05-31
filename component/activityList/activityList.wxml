@@ -1,0 +1,7 @@
+<view class='wrapper'>
+  <image class='wrapper-image' src='{{obj.AtyPicName&&activitySrc+obj.AtyPicName}}'></image>
+  <view class='wrapper-box'>
+    <view class='wrapper-name'>{{obj.AtyName}}</view>
+    <view class='wrapper-info'>{{obj.AtyAbstract}}</view>
+  </view>
+</view>

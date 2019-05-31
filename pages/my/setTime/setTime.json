@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "设置上课时间",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "course-info": "/component/courseInfo/courseInfo"
+  }
+}

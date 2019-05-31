@@ -1,0 +1,27 @@
+page {
+  background: #fff;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.image {
+  width: 262rpx;
+  margin-top: 190rpx;
+}
+
+.btn {
+  width: 90%;
+  border-radius: 10rpx;
+}
+
+.code-image {
+  width: 184rpx;
+  margin: 30rpx auto 30rpx;
+}
+
+.btn-share{
+  border: 1px solid #ff425b;
+}

@@ -1,0 +1,29 @@
+<view wx:if='{{isGroup}}' class='wrapper'>
+  <view class='box'>
+    <image mode='widthFix' class='list-image' src='/images/time.png'></image>
+    <text wx:if='{{!buyTime}}'>{{showTime}}</text>
+    <block wx:if='{{buyTime}}'>
+      <text class='color'>{{now}}节</text>
+      <text> / {{end}}节</text>
+    </block>
+  </view>
+  <view wx:if='{{!buyTime}}'>
+    {{tabIndex==0?"已预约":"已完成"}}
+  </view>
+  <view wx:if='{{buyTime}}'>
+    {{buyTime}}
+  </view>
+</view>
+<view wx:if='{{!isGroup}}' class='wrapper'>
+  <view class='box'>
+    <image mode='widthFix' class='list-image' src='/images/time.png'></image>
+    <text class='color'>{{now}}课时 </text>
+    <text> / {{end}}课时</text>
+  </view>
+  <view wx:if='{{!isRight}}'>
+    学员：{{stuName}} / {{stuPhone}}
+  </view>
+  <view wx:if='{{isRight}}'>
+    {{tabIndex==0?"已预约":"已完成"}}
+  </view>
+</view>

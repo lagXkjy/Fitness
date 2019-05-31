@@ -1,0 +1,7 @@
+<swiper class='swiper' style='width:100%;height:{{height}}rpx;' indicator-color='#b0b0b0' indicator-active-color='#ffffff' indicator-dots='{{true}}' autoplay='{{true}}' interval='{{3000}}' duration='{{500}}' circular='{{true}}' current='{{current}}' bindchange='change'>
+  <block wx:for='{{arr}}' wx:key='{{index}}'>
+    <swiper-item>
+      <image bindtap='bindSwiper' class='swiper-image' src='{{iUrl?iUrl+item.image:item.image}}'></image>
+    </swiper-item>
+  </block>
+</swiper>

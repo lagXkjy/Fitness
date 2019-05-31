@@ -1,0 +1,8 @@
+<import src='/libs/wxParse/wxParse.wxml' />
+<activity-list obj="{{atyInfo}}"></activity-list>
+<view class='border-box padding-lr-30 padding-tb-20 white-bg border-b-1 font-28 black-color flex align-center'>
+  <view class='title-left theme-bg border-box margin-r-10'></view>
+  活动介绍</view>
+<view class='white-bg padding-30 font-22'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

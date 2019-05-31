@@ -1,0 +1,11 @@
+<view class='wrapper'>
+  <block wx:for='{{listData}}' wx:key='{{index}}'>
+    <view bindtap='change' data-index='{{index}}' class='list {{isFitness?"fitness":""}} {{weekIndex===index&& "now"}}'>
+      <text hidden='{{weekIndex===index}}'>{{item.week}}</text>
+       <view hidden='{{weekIndex!==index}}' class='list-now'>
+        <text wx:if='{{item.time}}'>{{item.time}}</text>
+        <text>{{item.day}}</text>
+      </view> 
+    </view>
+  </block>
+</view>

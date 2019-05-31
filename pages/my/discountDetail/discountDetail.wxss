@@ -1,0 +1,12 @@
+.context {
+  padding-top: 46rpx;
+  padding-bottom: 46rpx;
+}
+
+.list-image {
+  width: 38rpx;
+}
+
+.right {
+  width: 18rpx;
+}

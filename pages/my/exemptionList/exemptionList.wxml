@@ -1,0 +1,10 @@
+<block wx:for='{{listData}}' wx:key='{{index}}'>
+  <view class='margin-t-20 border-box'>
+    <course-info-top is-right='{{true}}' show-time='{{item.showTime}}' isGroup='{{true}}' tab-index='{{item.CoIsItOver}}'></course-info-top>
+    <course-info data-index='{{index}}' bindclicklist='skipMyCourseDetail' obj='{{item}}' i-url='{{teaSrc}}'></course-info>
+    <course-info-bottom bindquest='skipAnswer' data-index='{{index}}' tab-index='{{item.CoIsItOver}}' is-order='{{item.CoVerCode}}' refundType='{{item.CoPayType===2?2:item.CoPayType===4 ? 3 : 0}}' is-refund='{{true}}' bindrefund='clickRefund' bindcheck='skipMyCourseDetail'></course-info-bottom>
+  </view>
+</block>
+<view wx:if='{{listData.length<=0}}' class='noData'>
+  暂无数据
+</view>

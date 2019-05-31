@@ -1,0 +1,61 @@
+.header {
+  width: 100%;
+  height: 200rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+}
+
+.header-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-portrait {
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+}
+
+.header-right {
+  width: 70%;
+}
+
+.userName {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.right-image {
+  width: 20rpx;
+}
+
+.list-image {
+  width: 35rpx;
+}
+
+.vip-image {
+  width: 55rpx;
+}
+
+.head-vip {
+  border-radius: 6rpx;
+  padding: 10rpx 15rpx;
+}
+
+.head-vip image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.line-50{
+  line-height: 50rpx;
+}

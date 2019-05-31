@@ -1,0 +1,37 @@
+<!-- pages/shop/myInvite/myInvite.wxml -->
+<view class="margin-t-20 padding-30 border-box">
+    <view class="content white-bg">
+        <view class="round round-left"></view>
+        <view class="round round-right"></view>
+        <view class="content-title white-color font-30 flex justify-center align-center font-weight">
+            {{type === 0 ? '还有价值'+CashCouponTotalSum+'元的代金券在路上' : '已有'+listData.length+'个好友购买'}}
+        </view>
+        <view class="content-list-box border-box padding-l-20 padding-r-20">
+            <view wx:for='{{listData}}' wx:key='UserId' class="content-list border-box padding-l-10 padding-r-10 font-24 flex align-center">
+                <view class="black-color">1</view>
+                <image class="margin-r-20 margin-l-20" mode="aspectFit" src="{{item.UserAvaUrl}}" />
+                <view>
+                    <view class="">{{item.UserNickName}}</view>
+                    <view class="font-20 list-play">{{type === 0 ? '未购买' : '已购买'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="content-footer flex justify-center align-center font-20">
+            <view></view>
+            <view>已经到底啦</view>
+            <view></view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{bannerAndRules.IcrProblem}}" class="query border-box padding-30 font-24">
+    <!-- <view class="">Q&A</view> -->
+    <!-- <view class="query-list margin-t-50">
+        <view class='white-color margin-b-20'>1、代金券在路上为什么没有到账？</view>
+        <text>答：邀请新人好友后，还需使用该新人预约团体课程，您才可获得20元代金券。</text>
+    </view> -->
+    <view class="query-list margin-t-50">
+        <rich-text nodes="{{bannerAndRules.IcrProblem}}"></rich-text>
+        <!-- <text>{{bannerAndRules.IcrProblem}}</text> -->
+    </view>
+</view>
+<button open-type="share" class="footer white-color font-30 flex justify-center align-center">邀请更多好友</button>

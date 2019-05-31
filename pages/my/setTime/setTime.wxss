@@ -1,0 +1,12 @@
+.left-image {
+  width: 38rpx;
+}
+
+.btn {
+  border: 1px solid #ff425b;
+  padding: 4rpx 20rpx;
+}
+
+.color {
+  color: #ff425b;
+}

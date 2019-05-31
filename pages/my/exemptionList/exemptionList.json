@@ -1,0 +1,11 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000",
+  "navigationBarTitleText": "二人同行一人免单",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "course-info": "/component/courseInfo/courseInfo",
+    "course-info-bottom": "/component/courseInfoBottom/courseInfoBottom",
+    "course-info-top": "/component/courseInfoTop/courseInfoTop"
+  }
+}

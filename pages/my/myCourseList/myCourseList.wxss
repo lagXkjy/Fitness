@@ -1,0 +1,9 @@
+.list-image {
+  width: 38rpx;
+}
+
+.btn {
+  border: 1px solid #ff425b;
+  border-radius: 4rpx;
+  padding: 5rpx 20rpx;
+}

@@ -1,0 +1,49 @@
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>课程包：</view>
+    <view class='black-color context point'>{{ppkInfo.PpkTitle}}</view>
+  </view>
+</view>
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>数量：</view>
+    <view class='black-color context point'>{{ppkInfo.PpkNum}}</view>
+  </view>
+</view>
+
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>姓名：</view>
+    <input type='text' bindinput='userName' class='black-color context block' placeholder='请填写姓名' placeholder-class='gray-color' value='{{userName}}'></input>
+  </view>
+</view>
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>手机：</view>
+    <input bindinput='userPhone' type='number' maxlength='11' class='black-color context block' value='{{userPhone}}' placeholder-class='gray-color' placeholder='请填写手机号'></input>
+  </view>
+</view>
+
+<view class='flex align-center justify-between border-b-1 padding-30 font-28 white-bg'>
+  <view class='box flex align-center justify-between'>
+    <view class='black-color margin-r-10'>余额支付：</view>
+    <view class='black-color context point'>¥{{balance}}
+      <!-- <text class='font-26'>您的余额不足，快去充值吧</text> -->
+    </view>
+  </view>
+</view>
+<view class='margin-t-30 padding-lr-30 font-22 gray-color '>
+  温馨提示：
+</view>
+<view class='padding-lr-30 font-22 gray-color'>
+  {{ppkInfo.PpkPrompt}}
+</view>
+<view class='footer border-box flex'>
+  <view class='footer-price white-bg flex align-center font-26 black-color padding-l-30'>
+    <text class='margin-r-10'>支付金额</text>
+    <text class='theme-color font-weight'>¥{{price}}</text>
+  </view>
+  <form class='form' report-submit='true' bindsubmit='submit'>
+    <button form-type='submit' class='btn theme-bg font-30 white-color flex justify-center align-center'>提交订单</button>
+  </form>
+</view>

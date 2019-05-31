@@ -1,0 +1,68 @@
+/* pages/shop/myInvite/myInvite.wxss */
+page{
+    background: #242424;
+}
+.content{
+    border-radius: 10rpx;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.round{
+    position: absolute;
+    width: 10rpx;
+    height: 10rpx;
+    top: 95rpx;
+    background: #242424;
+    border-radius: 50%;
+}
+.round-left{
+    left: -5rpx;
+}
+.round-right{
+    right: -5rpx;
+}
+.content-title{
+    background: #ff425b;
+    height: 100rpx;
+}
+.content-list{
+    border-bottom: 1px solid #d8d8d8;
+    height: 100rpx;
+}
+.content-list>image{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+.list-play{
+    color: #7f7f7f;
+}
+.content-footer{
+    color: #7f7f7f;
+    height: 100rpx;
+}
+.content-footer>view:nth-child(1){
+    width: 75rpx;
+    border-top: 1px solid #d8d8d8;
+    margin-right: 10rpx;
+}
+.content-footer>view:nth-last-child(1){
+    width: 75rpx;
+    border-top: 1px solid #d8d8d8;
+    margin-left: 10rpx;
+}
+.query{
+    margin-bottom: 90rpx;
+    color: #616161;
+    margin-top: 50rpx;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+    background: #ff425b;
+    border-radius: 0;
+}

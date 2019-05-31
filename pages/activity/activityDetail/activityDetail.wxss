@@ -1,0 +1,5 @@
+.title-left {
+  display: inline-block;
+  height: 30rpx;
+  width: 3px;
+}

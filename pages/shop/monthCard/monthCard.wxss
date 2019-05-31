@@ -1,0 +1,53 @@
+/* pages/shop/monthCard/monthCard.wxss */
+.header{
+    height: 280rpx;
+    background: #ffd8dd;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.banner-box{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 89%;
+}
+.banner-box>image{
+    width: 100%;
+    display: block;
+}
+.header-context{
+    position: absolute;
+    top: 50%;
+    left: 7.5%;
+}
+.header-context>view:nth-child(2){
+    border: 1px solid #fff;
+    padding: 4rpx 20rpx;
+}
+.rules{
+    color: #ff425b;
+}
+.item{
+    border-top: 1px solid #e0e0e0;
+    height: 100rpx;
+}
+.item-title{
+    width: 150rpx;
+}
+.item-value{
+    color: #a6a6a6;
+    width: 600rpx;
+}
+.play-btn{
+    background: #ff425b;
+    height: 90rpx;
+    border-radius: 4rpx;
+    margin-top: 50rpx;
+    margin-bottom: 36rpx;
+}
+.right-img{
+    width: 20rpx;
+}

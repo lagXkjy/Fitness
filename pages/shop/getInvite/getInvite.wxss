@@ -1,0 +1,59 @@
+/* pages/shop/getInvite/getInvite.wxss */
+page{
+    background: #242424;
+}
+.banner{
+    width: 100%;
+}
+.footer{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 60rpx;
+    overflow: visible;
+}
+.content{
+    border-radius: 10rpx;
+    padding: 130rpx 60rpx 60rpx;
+    background: #fff;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: visible;
+}
+.invite-btn{
+    border: 1px solid #ff425b;
+    color: #ff425b;
+    border-radius: 10rpx;
+    line-height: normal;
+}
+.to-buy{
+    background: #ff425b;
+    color: #fff;
+    border-radius: 10rpx;
+    line-height: normal;
+}
+.tips{
+    color: #242424;
+    margin-bottom: 45rpx;
+}
+.objective{
+    color: #4f4e4e;
+    margin-bottom: 40rpx;
+}
+.my-color{
+    color: #ff425b;
+}
+.header{
+    position: absolute;
+    top: -95rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 190rpx;
+    height: 190rpx;
+    border-radius: 50%;
+    background: #242424;
+    overflow: hidden;
+}
